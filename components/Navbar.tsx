@@ -24,29 +24,30 @@ export default function Navbar() {
           Minted
         </Link>
 
-        <button
-          type="button"
-          className="hidden md:flex bg-neutral-100 hover:bg-neutral-200 rounded-md px-3 py-2 text-sm text-neutral-800 items-center gap-1 shrink-0"
-        >
-          Catalogue
-          <ChevronDown size={16} />
-        </button>
-
-        <label className="hidden md:flex flex-1 max-w-3xl items-center bg-neutral-100 rounded-md px-3 py-2 gap-2">
-          <Search size={18} className="text-neutral-500" aria-hidden />
-          <input
-            type="search"
-            placeholder="Search for items"
-            className="bg-transparent outline-none w-full text-sm placeholder:text-neutral-500"
-          />
+        <div className="hidden md:flex flex-1 max-w-3xl items-stretch gap-0.5">
           <button
             type="button"
-            aria-label="Search by image"
-            className="text-neutral-500 hover:text-neutral-700 shrink-0"
+            className="bg-neutral-100 hover:bg-neutral-200 rounded-l-md px-3 py-2 text-sm text-neutral-800 flex items-center gap-1 shrink-0"
           >
-            <Camera size={18} />
+            Catalogue
+            <ChevronDown size={16} />
           </button>
-        </label>
+          <label className="flex flex-1 items-center bg-neutral-100 rounded-r-md px-3 py-2 gap-2">
+            <Search size={18} className="text-neutral-500" aria-hidden />
+            <input
+              type="search"
+              placeholder="Search for items"
+              className="bg-transparent outline-none w-full text-sm placeholder:text-neutral-500"
+            />
+            <button
+              type="button"
+              aria-label="Search by image"
+              className="text-neutral-500 hover:text-neutral-700 shrink-0"
+            >
+              <Camera size={18} />
+            </button>
+          </label>
+        </div>
 
         <nav className="ml-auto flex items-center gap-2 shrink-0">
           <button
