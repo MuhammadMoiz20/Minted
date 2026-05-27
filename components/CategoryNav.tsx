@@ -20,7 +20,7 @@ export default function CategoryNav() {
           <Link
             key={c}
             href="/catalog"
-            className="text-neutral-800 hover:text-brand font-medium"
+            className="text-[#a7adae] hover:text-brand font-normal"
           >
             {c}
           </Link>
