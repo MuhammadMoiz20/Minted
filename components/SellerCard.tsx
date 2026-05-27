@@ -33,7 +33,7 @@ export default function SellerCard({ seller }: { seller: Seller }) {
           </span>
         </div>
         <Link
-          href="#"
+          href="/profile"
           className="mt-1 inline-block text-sm font-semibold text-brand"
         >
           View profile

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Search, Heart, User, Menu } from "lucide-react";
+import Image from "next/image";
+import { Search, Heart, Menu } from "lucide-react";
+import { currentUser } from "@/lib/mockData";
 
 export default function Navbar() {
   return (
@@ -37,12 +39,6 @@ export default function Navbar() {
           >
             Sell now
           </button>
-          <Link
-            href="#"
-            className="hidden md:inline text-sm text-neutral-700 hover:text-brand"
-          >
-            Sign up | Log in
-          </Link>
           <button
             type="button"
             aria-label="Favourites"
@@ -50,13 +46,19 @@ export default function Navbar() {
           >
             <Heart size={20} />
           </button>
-          <button
-            type="button"
-            aria-label="Account"
-            className="p-2 text-neutral-700 hover:text-brand"
+          <Link
+            href="/profile"
+            aria-label="Profile"
+            className="shrink-0"
           >
-            <User size={20} />
-          </button>
+            <Image
+              src={currentUser.avatar}
+              alt={currentUser.username}
+              width={32}
+              height={32}
+              className="rounded-full object-cover"
+            />
+          </Link>
           <button
             type="button"
             aria-label="Menu"

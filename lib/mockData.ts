@@ -110,3 +110,28 @@ export function getRelatedItems(item: Item, count = 4): Item[] {
     .filter((it) => it.category === item.category && it.id !== item.id)
     .slice(0, count);
 }
+
+export const currentUser: Seller & {
+  location: string;
+  lastSeenMinutes: number;
+  followers: number;
+  following: number;
+  verifiedGoogle: boolean;
+  verifiedEmail: boolean;
+} = {
+  id: "me",
+  username: "markhor9",
+  avatar: "https://i.pravatar.cc/200?u=me",
+  rating: 5,
+  reviewCount: 3,
+  location: "Allerton Bywater, United Kingdom",
+  lastSeenMinutes: 36,
+  followers: 0,
+  following: 0,
+  verifiedGoogle: true,
+  verifiedEmail: true,
+};
+
+export function getCurrentUserListings(): Item[] {
+  return items.slice(0, 10);
+}
