@@ -24,15 +24,16 @@ export default function Navbar() {
           Minted
         </Link>
 
-        <div className="hidden md:flex flex-1 max-w-3xl items-stretch gap-0.5">
+        <div className="hidden md:flex flex-1 max-w-3xl items-stretch bg-neutral-100 rounded-md">
           <button
             type="button"
-            className="bg-neutral-100 hover:bg-neutral-200 rounded-l-md px-3 py-2 text-sm text-neutral-800 flex items-center gap-1 shrink-0"
+            className="px-3 py-2 text-sm text-neutral-800 flex items-center gap-1 shrink-0 hover:bg-neutral-200 rounded-l-md"
           >
             Catalogue
             <ChevronDown size={16} />
           </button>
-          <label className="flex flex-1 items-center bg-neutral-100 rounded-r-md px-3 py-2 gap-2">
+          <span className="w-px self-stretch bg-neutral-300 my-2" aria-hidden />
+          <label className="flex flex-1 items-center px-3 py-2 gap-2 rounded-r-md">
             <Search size={18} className="text-neutral-500" aria-hidden />
             <input
               type="search"
@@ -42,7 +43,7 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Search by image"
-              className="text-neutral-500 hover:text-neutral-700 shrink-0"
+              className="text-brand hover:text-brand-dark shrink-0"
             >
               <Camera size={18} />
             </button>
