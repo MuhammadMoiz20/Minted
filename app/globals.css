@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --color-teal: #09B1BA;
-  --color-teal-dark: #007782;
+  --color-teal: #027782;
+  --color-teal-dark: #015561;
 }
 
 @theme inline {
