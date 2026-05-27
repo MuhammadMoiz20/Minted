@@ -20,17 +20,31 @@ type BannerProps = {
   body: string;
 };
 
-function Banner({ icon, title, body }: BannerProps) {
+function PromoBanner({ icon, title, body }: BannerProps) {
   return (
-    <div className="relative flex items-start gap-3 rounded-2xl bg-[#e6fbfa] p-4">
-      <div className="size-10 rounded-md bg-white flex items-center justify-center shrink-0">
-        <div className="text-brand">{icon}</div>
+    <div className="relative flex items-start gap-4 rounded-2xl bg-[#e6fbfa] p-5">
+      <div className="size-12 flex items-center justify-center shrink-0 text-brand">
+        {icon}
       </div>
       <div className="flex-1">
         <p className="font-semibold text-sm text-neutral-900">{title}</p>
         <p className="text-sm text-neutral-700 mt-0.5">{body}</p>
       </div>
-      <Info size={16} className="text-neutral-400 absolute top-3 right-3" />
+    </div>
+  );
+}
+
+function BadgeBanner({ icon, title, body }: BannerProps) {
+  return (
+    <div className="relative flex items-start gap-4 rounded-2xl bg-white border border-neutral-200 p-5">
+      <div className="size-12 rounded-full border-2 border-brand flex items-center justify-center shrink-0 text-brand">
+        {icon}
+      </div>
+      <div className="flex-1 pr-6">
+        <p className="font-semibold text-sm text-neutral-900">{title}</p>
+        <p className="text-sm text-neutral-700 mt-0.5">{body}</p>
+      </div>
+      <Info size={18} className="text-neutral-400 absolute top-4 right-4" />
     </div>
   );
 }
@@ -127,22 +141,22 @@ export default function ProfilePage() {
 
       {/* Info banner grid */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Banner
-          icon={<TrendingUp className="size-5" />}
+        <PromoBanner
+          icon={<TrendingUp className="size-6" />}
           title="Bump your items"
           body="Push an item to the top and reach the right buyers. Get insights."
         />
-        <Banner
-          icon={<Sparkles className="size-5" />}
+        <PromoBanner
+          icon={<Sparkles className="size-6" />}
           title="Stand out with Showcase"
           body="Get a bigger visibility boost for all your listings."
         />
-        <Banner
+        <BadgeBanner
           icon={<Upload className="size-5" />}
           title="Frequent Uploads: earned"
           body="Encourage buyers to check out more items — don't lose your listing streak!"
         />
-        <Banner
+        <BadgeBanner
           icon={<Zap className="size-5" />}
           title="Speedy-ish: 2 day shipping time"
           body="To earn this badge, try to send your items a little faster next time."
