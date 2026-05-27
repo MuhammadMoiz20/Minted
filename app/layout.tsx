@@ -5,7 +5,11 @@ import CategoryNav from "@/components/CategoryNav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Minted | Buy & sell pre-loved fashion",
@@ -20,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inter.className} bg-white text-neutral-900 antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} ${inter.className} font-sans bg-white text-neutral-900 antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
         <CategoryNav />
