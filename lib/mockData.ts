@@ -125,7 +125,7 @@ export const currentUser: Seller & {
   rating: 5,
   reviewCount: 3,
   location: "Allerton Bywater, United Kingdom",
-  lastSeenMinutes: 36,
+  lastSeenMinutes: 42,
   followers: 0,
   following: 0,
   verifiedGoogle: true,
@@ -133,5 +133,6 @@ export const currentUser: Seller & {
 };
 
 export function getCurrentUserListings(): Item[] {
-  return items.slice(0, 10);
+  if (items.length >= 30) return items.slice(0, 30);
+  return Array.from({ length: 30 }, (_, i) => items[i % items.length]);
 }
