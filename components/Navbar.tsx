@@ -34,7 +34,7 @@ export default function Navbar() {
           </button>
           <span className="w-px self-stretch bg-neutral-300 my-2" aria-hidden />
           <label className="flex flex-1 items-center px-3 py-2 gap-2 rounded-r-md">
-            <Search size={18} className="text-neutral-500" aria-hidden />
+            <Search size={20} strokeWidth={1.75} className="text-neutral-500" aria-hidden />
             <input
               type="search"
               placeholder="Search for items"
@@ -45,7 +45,7 @@ export default function Navbar() {
               aria-label="Search by image"
               className="text-brand hover:text-brand-dark shrink-0"
             >
-              <Camera size={18} />
+              <Camera size={20} strokeWidth={1.75} />
             </button>
           </label>
         </div>
@@ -56,14 +56,14 @@ export default function Navbar() {
             aria-label="Messages"
             className="hidden sm:inline-flex p-2 hover:bg-neutral-100 rounded-md text-neutral-700"
           >
-            <Mail className="size-5" />
+            <Mail className="size-5" strokeWidth={1.75} />
           </button>
           <button
             type="button"
             aria-label="Notifications"
             className="relative p-2 hover:bg-neutral-100 rounded-md text-neutral-700"
           >
-            <Bell className="size-5" />
+            <Bell className="size-5" strokeWidth={1.75} />
             <span className="absolute top-0 right-0 min-w-5 h-5 px-1 rounded-full bg-red-500 text-white text-[10px] font-bold flex items-center justify-center leading-none">
               30
             </span>
@@ -73,7 +73,7 @@ export default function Navbar() {
             aria-label="Favourites"
             className="hidden sm:inline-flex p-2 hover:bg-neutral-100 rounded-md text-neutral-700"
           >
-            <Heart className="size-5" />
+            <Heart className="size-5" strokeWidth={1.75} />
           </button>
           <Link
             href="/profile"
@@ -96,7 +96,7 @@ export default function Navbar() {
             aria-label="Help"
             className="hidden sm:inline-flex p-2 hover:bg-neutral-100 rounded-md text-neutral-700"
           >
-            <HelpCircle className="size-5" />
+            <HelpCircle className="size-5" strokeWidth={1.75} />
           </button>
         </nav>
       </div>
