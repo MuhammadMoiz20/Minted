@@ -132,7 +132,20 @@ export const currentUser: Seller & {
   verifiedEmail: true,
 };
 
-export function getCurrentUserListings(): Item[] {
-  if (items.length >= 30) return items.slice(0, 30);
-  return Array.from({ length: 30 }, (_, i) => items[i % items.length]);
+export type Listing = Item & {
+  views: number;
+  favourites: number;
+  sold: boolean;
+};
+
+export function getCurrentUserListings(): Listing[] {
+  const base = items.length >= 30
+    ? items.slice(0, 30)
+    : Array.from({ length: 30 }, (_, i) => items[i % items.length]);
+  return base.map((item, i) => {
+    const views = ((i * 7 + 1) % 26) + 1;
+    const favourites = (i * 3) % 20;
+    const sold = i >= 10 && i < 15;
+    return { ...item, views, favourites, sold };
+  });
 }

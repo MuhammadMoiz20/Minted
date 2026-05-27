@@ -12,7 +12,7 @@ import {
   Info,
 } from "lucide-react";
 import { currentUser, getCurrentUserListings } from "@/lib/mockData";
-import ItemGrid from "@/components/ItemGrid";
+import ListingCard from "@/components/ListingCard";
 
 type BannerProps = {
   icon: React.ReactNode;
@@ -184,9 +184,11 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* Item grid */}
-      <div className="mt-4">
-        <ItemGrid items={listings} />
+      {/* Listings grid */}
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6">
+        {listings.map((l, i) => (
+          <ListingCard key={`${l.id}-${i}`} listing={l} />
+        ))}
       </div>
     </div>
   );
