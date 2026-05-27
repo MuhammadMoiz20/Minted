@@ -22,7 +22,7 @@ type BannerProps = {
 
 function Banner({ icon, title, body }: BannerProps) {
   return (
-    <div className="relative flex items-start gap-3 rounded-2xl bg-[#E6F4F1] p-4">
+    <div className="relative flex items-start gap-3 rounded-2xl bg-[#e6fbfa] p-4">
       <div className="size-10 rounded-md bg-white flex items-center justify-center shrink-0">
         <div className="text-brand">{icon}</div>
       </div>
